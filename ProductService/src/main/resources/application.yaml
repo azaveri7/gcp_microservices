@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${POSTGRESS_ENDPOINT:127.0.0.1}:${POSTGRESS_PORT:5432}/${POSTGRESS_DATABASE_NAME:productdb}
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      format-sql: true
+    application:
+      name: PRODUCT-SERVICE
